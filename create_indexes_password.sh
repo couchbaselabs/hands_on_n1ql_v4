@@ -1,12 +1,13 @@
-# create_indexes.sh
+# create_indexes_password.sh
+. ./settings
 
 for b in contacts customer reviews user_profile
 do
 	qry='statement=CREATE PRIMARY INDEX ON '
 	qry+=$b
-	curl http://127.0.0.1:8093/query/service -XPOST -d "$qry"
+        curl ${queryservice} -u Administrator:${pw} -XPOST -d "$qry"
 done
 
-curl http://localhost:8093/query/service -d 'statement=create primary index on purchases' -XPOST -u purchases:Prch3s3s
-curl http://localhost:8093/query/service -d 'statement=create primary index on product' -XPOST -u  product:Pr0dct 
+curl ${queryservice} -u purchases:Prch3s3s -XPOST -d 'statement=CREATE PRIMARY INDEX ON purchases'
+curl ${queryservice} -u product:Pr0dct -XPOST -d 'statement=CREATE PRIMARY INDEX ON product'
 

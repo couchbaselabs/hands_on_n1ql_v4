@@ -1,0 +1,7 @@
+pw=${1:-password}
+host=http://127.0.0.1
+clusterport=8091
+queryport=8093
+cluster=${host}:${clusterport}
+queryservice=${host}:${queryport}/query/service
+port=12200
