@@ -26,6 +26,9 @@ $ ./recreate_buckets.sh password
 #### Load buckets 
 $ ./load_data.sh password
 
+#### Drop default indexes on travel-sample
+$ ./drop_indexes.sh
+
 #### Create primary key indexes
 $ ./create_indexes.sh
 
