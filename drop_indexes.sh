@@ -9,9 +9,9 @@ for i in def_primary def_airportname def_city def_faa def_icao def_name_type def
 do
         qry='statement=DROP INDEX `travel-sample`.'
         qry+=$i
-        echo $qry
+        echo "$qry"
         curl ${queryservice} -u Administrator:${pw} -XPOST -d "$qry"
 done
 
-echo "Done"
+echo "$0 - Done"
 

@@ -2,7 +2,7 @@ cbver={$1:-2845}
 os={$2:-centos}
 osver={$3:-7} 
 downloadpath=http://172.23.120.24/builds/latestbuilds/couchbase-server/watson/${cbver}
-case os in
+case ${os} in
      centos)
          cbpkg=couchbase-server-enterprise-4.5.1-${cbver}-${os}${osver}.x86_64.rpm
          wget ${downloadpath}/${cbpkg}
