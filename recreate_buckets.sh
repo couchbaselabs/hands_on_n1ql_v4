@@ -3,10 +3,16 @@
 
 . ./settings
 
-for b in contacts customer reviews product purchases user_profile customer_profile
+for b in contacts customer reviews product purchases user_profile customer_profile \`travel-sample\`
 do
     echo "Deleting bucket $b..."
     curl -XDELETE ${cluster}/pools/default/buckets/$b -u Administrator:$pw
+done
+
+sleep 20
+
+for b in contacts customer reviews product purchases user_profile customer_profile
+do
     qry='name='
     qry+=$b
     let "port += 1"
@@ -15,5 +21,4 @@ do
 done
 
 # install the travel-sample
-curl -XDELETE ${cluster}/pools/default/buckets/travel-sample -u Administrator:$pw
 curl ${cluster}/sampleBuckets/install -u Administrator:$pw -X POST -d '["travel-sample"]'
