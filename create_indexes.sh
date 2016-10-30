@@ -1,7 +1,7 @@
 # create_indexes.sh
 . ./settings
 
-for b in contacts customer reviews product purchases user_profile customer_profile \`travel-sample\`
+for b in contacts customer reviews product purchases user_profile customer_profile \`travel-sample\` cars car_changes
 do
 	qry='statement=CREATE PRIMARY INDEX ON '
 	qry+=$b

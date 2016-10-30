@@ -18,7 +18,7 @@ case $os in
         ;;
 esac
 tar zxf data.tar.gz
-for b in contacts customer reviews product purchases user_profile customer_profile
+for b in contacts customer reviews product purchases user_profile customer_profile cars car_changes
 do
     echo "Populating bucket $b"
     zip -r $b $b
