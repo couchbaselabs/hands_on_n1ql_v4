@@ -9,8 +9,6 @@ Modify the MERGE statement to introduce a dummy record in cars when no correspon
 Refer to :
 http://developer.couchbase.com/documentation/server/4.5/n1ql/n1ql-language-reference/merge.html
 
-Add a RETURNING clause in order to see the changes made. 
-
 <pre id="example">
 
 
