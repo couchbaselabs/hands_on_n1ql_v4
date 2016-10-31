@@ -1,11 +1,15 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## MERGE
+## UPDATE
 
-Create primary index on cars
+Challenge : 
+
+Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
+
+Array functions are explained here: 
+http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
+
 
 <pre id="example">
-
-create primary index on cars
 
 </pre>

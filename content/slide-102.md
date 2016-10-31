@@ -2,13 +2,12 @@
 
 ## INSERT
 
-
-The query on the right performs an insert-select. This allows you 
-to create new documents from complex queries. 
+The query to the right inserts 2 documents with Key "helga" and "arnold".
 
 <pre id="example">
-INSERT INTO customer_profile 
-(KEY contacts.fname || "-" || contacts.lname, VALUE contacts)
-SELECT * from contacts where age > 40
+INSERT INTO contacts (KEY, VALUE) 
+ VALUES ("helga", {"name":"Helga Pataki", "type":"actor"}), 
+      	 ("arnold", {"name":"The Governator (Emeritus)", "type":"actor"}),
+ 		 ("phoebe", {"name":"Phoebe Buffay", "type":"actor"})
 
 </pre>

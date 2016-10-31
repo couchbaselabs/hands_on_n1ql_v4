@@ -2,10 +2,20 @@
 
 ## DELETE
 
-Using the index previously created we can delete the document. 
+DELETE lets you remove documents from buckets.
+
+There are 2 methods :
+* Use Clause
+** Using USE KEYS expr
+** Using USE INDEX (index-ref)
+
+* Use where clause to constrain which documents to delete.
+
+The example deletes 2 documents with Keys "baldwin" and "arnold"
+
 
 <pre id="example">
 DELETE FROM contacts
-USE INDEX (deleteindex) where name="Helga Pataki"
+USE KEYS ["baldwin", "arnold"]
 
 </pre>

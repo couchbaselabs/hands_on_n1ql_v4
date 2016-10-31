@@ -1,25 +1,17 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## MERGE
+## UPDATE
 
-MERGE lets you update, insert, or delete (actions) in one bucket based on a match 
-with the data in another. Multiple actions can be specified in the same query rather 
-than separate independent statements both when a match is found and otherwise.
+UPDATE replaces a document that already exists with updated values
+This can be done using a SET or UNSET clause.
 
-The MERGE statement contains a source bucket and a target bucket. It needs a join 
-condition based on a common attribute.
+The UPDATE-FOR clause uses the FOR statement to iterate over a nested array and SET or UNSET the given attribute for every matching element in the array.
 
-For the merge examples we will use buckets cars and car_changes.
-
-The query to the right inserts documents into cars
-
+Exercise : Remove the type attribte for the "ian" document.
 
 <pre id="example">
-
-INSERT INTO cars VALUES 
-("1", { "make" : "Toyota", "plate": "AAA-123", "mileage": 1000}), 
-("2", { "make" : "Chevrolet", "plate": "BBB-456", "mileage": 1000}), 
-("3", { "make" : "BMW", "plate": "CCC-456", "mileage": 1000})
-
+UPDATE contacts USE KEYS "harry" 
+ SET type = "actor" 
+ RETURNING contacts
 
 </pre>

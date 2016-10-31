@@ -2,10 +2,10 @@
 
 ## DELETE
 
-Delete using a where clause
+Now we will look at deleting documents using indexes. 
+Create an index on the attribute name. 
 
 <pre id="example">
-DELETE FROM contacts
-WHERE type="actor" and name LIKE "%Phoebe%"
+CREATE INDEX deleteindex ON contacts (name)
 
 </pre>

@@ -1,11 +1,16 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## INSERT
 
-Now we will look at deleting documents using indexes. 
-Create an index on the attribute name. 
+Challenge :
+
+Use an INSERT statement to copy the contacts who don’t have children into the “customer_profile” bucket. 
+
+Use the UUID() function to create key values for the new records.
+
 
 <pre id="example">
-CREATE INDEX deleteindex ON contacts (name)
+INSERT INTO customer_profile (KEY UUID(), VALUE contacts)
+SELECT * FROM contacts WHERE children IS MISSING
 
 </pre>

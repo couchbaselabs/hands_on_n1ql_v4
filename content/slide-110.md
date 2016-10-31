@@ -1,16 +1,15 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## UPDATE
+## DELETE
 
-In addition to selecting objects by key, you can also select them by field values, with a WHERE CLAUSE. 
-The following example uses UPDATE to add to documents. Harry does not currently have a children field, and it can be added as shown. 
+Challenge : 
+
+Use a DELETE statement to remove all contacts who have more than one hobby.
+
+The array functions are documented here:
+http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
 
 
 <pre id="example">
-UPDATE contacts 
- SET children = [ { "name": "Tim", "age": 7 } ]
- WHERE  email = "harry@yahoo.com"
- RETURNING contacts
-
 
 </pre>
