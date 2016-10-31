@@ -3,10 +3,11 @@
 ## INSERT
 
 Insert lets you enter new documents into buckets.
-There are 2 methods : 
-*Insert documents directly. 
-** Multiple documents can be inserted simultaneously. 
-*Insert with select statement.
+There are 2 methods :  
+ 
+ * Insert documents directly  
+    * Multiple documents can be inserted simultaneously.   
+ * Insert with select statement  
 
 
 The query on the right performs a simple single value insert operation. 
