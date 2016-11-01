@@ -1,15 +1,11 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## UPDATE
+## DELETE
 
-Challenge : 
-
-Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
-
-Array functions are explained here: 
-http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
-
+Using the index previously created we can delete the document. 
 
 <pre id="example">
+DELETE FROM contacts
+USE INDEX (deleteindex) where name="Helga Pataki"
 
 </pre>

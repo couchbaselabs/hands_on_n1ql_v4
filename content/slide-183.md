@@ -1,12 +1,12 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## UPDATE
 
 Challenge : 
 
-Use a DELETE statement to remove all contacts who have more than one hobby.
+Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
 
-The array functions are documented here:
+Array functions are explained here: 
 http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
 
 

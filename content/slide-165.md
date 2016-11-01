@@ -1,13 +1,13 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 6 : N1QL monitoring
 
-## INSERT
+## Exploring completed requests
 
-The query to the right inserts 2 documents with Key "helga" and "arnold".
+Queries not using a covering index
 
 <pre id="example">
-INSERT INTO contacts (KEY, VALUE) 
- VALUES ("helga", {"name":"Helga Pataki", "type":"actor"}), 
-      	 ("arnold", {"name":"The Governator (Emeritus)", "type":"actor"}),
- 		 ("phoebe", {"name":"Phoebe Buffay", "type":"actor"})
+select *
+  from system:completed_requests
+  where PhaseCounts.`Scan` is not missing and PhaseCounts.`Fetch` is not missing
 
 </pre>
+

@@ -1,11 +1,14 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## INSERT
 
-Delete using a where clause
+
+The query on the right performs an insert-select. This allows you 
+to create new documents from complex queries. 
 
 <pre id="example">
-DELETE FROM contacts
-WHERE type="actor" and name LIKE "%Phoebe%"
+INSERT INTO customer_profile 
+(KEY contacts.fname || "-" || contacts.lname, VALUE contacts)
+SELECT * from contacts where age > 40
 
 </pre>

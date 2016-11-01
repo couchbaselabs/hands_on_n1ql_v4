@@ -1,14 +1,12 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 6 : N1QL monitoring
 
-## INSERT
+## Exploring completed requests
 
-
-The query on the right performs an insert-select. This allows you 
-to create new documents from complex queries. 
+Queries using a poorly selective index
 
 <pre id="example">
-INSERT INTO customer_profile 
-(KEY contacts.fname || "-" || contacts.lname, VALUE contacts)
-SELECT * from contacts where age > 40
-
+select *
+  from system:completed_requests
+   where PhaseCounts.`Scan` is not missing
+     and PhaseCounts.`Fetch`/ResultCount>10
 </pre>

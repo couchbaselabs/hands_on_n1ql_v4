@@ -1,16 +1,11 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 6 : N1QL monitoring
 
-## INSERT
+## Cancelling a requests
 
-Challenge :
-
-Use an INSERT statement to copy the contacts who don’t have children into the “customer_profile” bucket. 
-
-Use the UUID() function to create key values for the new records.
-
+As soon as the first is running, on the other run
 
 <pre id="example">
-INSERT INTO customer_profile (KEY UUID(), VALUE contacts)
-SELECT * FROM contacts WHERE children IS MISSING
+delete from system:active_requests
+  where Statement like "%travel%";
 
 </pre>

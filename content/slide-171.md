@@ -1,11 +1,13 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## INSERT
 
-Using the index previously created we can delete the document. 
+The query to the right inserts 2 documents with Key "helga" and "arnold".
 
 <pre id="example">
-DELETE FROM contacts
-USE INDEX (deleteindex) where name="Helga Pataki"
+INSERT INTO contacts (KEY, VALUE) 
+ VALUES ("helga", {"name":"Helga Pataki", "type":"actor"}), 
+      	 ("arnold", {"name":"The Governator (Emeritus)", "type":"actor"}),
+ 		 ("phoebe", {"name":"Phoebe Buffay", "type":"actor"})
 
 </pre>

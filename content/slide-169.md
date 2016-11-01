@@ -1,21 +1,18 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+## Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+N1QL provides several data modification statements.  
 
-DELETE lets you remove documents from buckets.
+ * Insert
+ * Delete
+ * Update
+ * Upsert
+ * Merge
 
-There are 2 methods :
-
-* Use Clause
-     * Using USE KEYS expr
-* Using USE INDEX (index-ref)
-* Use where clause to constrain which documents to delete.
-
-The example deletes 2 documents with Keys "baldwin" and "arnold"
-
+ In the N1QL DML statements DELETE, UPDATE and MERGE the LIMIT clause 
+ serves as a hint. The query engine can stop processing records any 
+ time after the LIMIT is reached. The LIMIT is not applied exactly, 
+ which is different from SELECT statements.
 
 <pre id="example">
-DELETE FROM contacts
-USE KEYS ["baldwin", "arnold"]
 
 </pre>

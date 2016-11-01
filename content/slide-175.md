@@ -1,17 +1,21 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## UPDATE
+## DELETE
 
-UPDATE replaces a document that already exists with updated values
-This can be done using a SET or UNSET clause.
+DELETE lets you remove documents from buckets.
 
-The UPDATE-FOR clause uses the FOR statement to iterate over a nested array and SET or UNSET the given attribute for every matching element in the array.
+There are 2 methods :
 
-Exercise : Remove the type attribte for the "ian" document.
+* Use Clause
+     * Using USE KEYS expr
+* Using USE INDEX (index-ref)
+* Use where clause to constrain which documents to delete.
+
+The example deletes 2 documents with Keys "baldwin" and "arnold"
+
 
 <pre id="example">
-UPDATE contacts USE KEYS "harry" 
- SET type = "actor" 
- RETURNING contacts
+DELETE FROM contacts
+USE KEYS ["baldwin", "arnold"]
 
 </pre>

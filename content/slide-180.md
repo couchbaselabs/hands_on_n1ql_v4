@@ -1,15 +1,17 @@
 # Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## MERGE
+## DELETE
 
 Challenge : 
 
-Modify the MERGE statement to introduce a dummy record in cars when no corresponding car record is found.
+Use a DELETE statement to remove all contacts who have more than one hobby.
 
-Refer to :
-http://developer.couchbase.com/documentation/server/4.5/n1ql/n1ql-language-reference/merge.html
+The array functions are documented here:
+http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
+
 
 <pre id="example">
-
-
+DELETE FROM contacts 
+WHERE ARRAY_LENGTH(hobbies) > 1
+returning *
 </pre>
