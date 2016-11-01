@@ -1,6 +1,6 @@
-# Part 5 : Querying Objects
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## Referencing objects within arrays
+## Querying Objects : Referencing objects within arrays
 
 <pre>
 select reviews[*].ratings 

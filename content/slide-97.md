@@ -1,6 +1,6 @@
-# Part 5 : Arrays 
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## 
+## Arrays 
  
  * Arrays can be simple: made up of scalar values.
   

@@ -1,6 +1,8 @@
-# Part 5 : Querying Objects
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## You can not only access attributes (fields) within the object, you can use them in predicates.
+## Querying Objects
+
+You can not only access attributes (fields) within the object, you can use them in predicates.
 
 <pre>
 select name, city 

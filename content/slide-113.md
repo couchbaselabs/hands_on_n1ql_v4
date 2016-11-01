@@ -1,4 +1,6 @@
-# Part 5 : Arrays: Cleanup  
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
+
+## Arrays: Cleanup  
 
 
 Drop the indexes.

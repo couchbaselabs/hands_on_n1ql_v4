@@ -1,6 +1,8 @@
-# Part 5 : Sample documents from travel-sample.
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## Let's look at Sample document from airline, airport, route, landmark and hotel.
+## Sample documents from travel-sample.
+
+### Let's look at Sample document from airline, airport, route, landmark and hotel.
 
 airline has a simple flat structure.
 airport, landmark, has geo objects.

@@ -7,7 +7,7 @@ Queries not using a covering index
 <pre id="example">
 select *
   from system:completed_requests
-  where PhaseCounts.`Scan` is not missing and PhaseCounts.`Fetch` is not missing
+  where PhaseCounts.`IndexScan` is not missing and PhaseCounts.`Fetch` is not missing
 
 </pre>
 

@@ -1,6 +1,8 @@
-# Part 5 : Verify the usage of index with appropriate query.
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## EXPLAIN the query the appropriate object. 
+## Verify the usage of index with appropriate query.
+
+EXPLAIN the query the appropriate object. 
 
 <pre>
 EXPLAIN select name, city from `travel-sample` h 

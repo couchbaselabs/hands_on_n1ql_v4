@@ -1,4 +1,6 @@
-# Part 5 : Arrays 
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
+
+## Arrays 
 
 N1QL has large number of ARRAY expressions, functions and aggregates.
 

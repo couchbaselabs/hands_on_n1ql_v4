@@ -1,6 +1,8 @@
-# Part 5 : Querying Objects
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## objects can be compared as a whole as well.
+## Querying Objects
+
+ Objects can be compared as a whole as well.
 
 <pre>
 select name, city from `travel-sample` h where geo = {

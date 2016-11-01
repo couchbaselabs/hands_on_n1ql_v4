@@ -1,4 +1,6 @@
-# Part 5 : Search for a value within ANY field of an array.
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
+
+## Search for a value within ANY field of an array.
 
 <pre>
 select COUNT(1)

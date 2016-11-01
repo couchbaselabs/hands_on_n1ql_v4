@@ -1,6 +1,7 @@
-# Part 5 : Nested objects and arrays in hotel document.
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
 ## Object and array nesting.
+### Nested objects and arrays in hotel document.
 
 hotel.geo is a simple nested object.
 hotel.reviews is array of review objects.

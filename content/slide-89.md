@@ -1,6 +1,6 @@
-# Part 5 : Querying Objects
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
 
-## Object references. 
+## Querying Objects : Object references
 
 Objects are references via dotted expression.
 keyspace.object.object.attribute

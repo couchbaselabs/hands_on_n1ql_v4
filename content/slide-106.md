@@ -1,4 +1,6 @@
-# Part 5 : Arrays : UNNEST
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
+
+## Arrays : UNNEST
 
 
 UNNEST : If a document or object contains an array, UNNEST performs a join of the nested array with its parent document. Each resulting joined object becomes an input to the query. UNNEST, JOINs can be chained.

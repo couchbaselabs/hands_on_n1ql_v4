@@ -1,4 +1,6 @@
-# Part 5 : Arrays 
+# Part 5 : Deep dive into Data modeling: Exploiting Arrays and Objects
+
+## Arrays 
 
 
   Arrays and Objects: Arrays are compared element-wise. Objects are first compared by length; objects of equal length are compared pairwise, with the pairs sorted by name.

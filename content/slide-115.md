@@ -1,4 +1,4 @@
-## <b>Part 6 : Query Optimization And Query Tuning</b>
+# Part 6 : Query Optimization And Query Tuning
 
 ## Example #1: Creating the right index for the query
 
