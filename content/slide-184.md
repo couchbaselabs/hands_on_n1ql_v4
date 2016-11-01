@@ -1,19 +1,16 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## UPDATE
+## UPDATE - Using where clause
 
-Challenge : 
-
-Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
-
-Array functions are explained here: 
-http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
+In addition to selecting objects by key, you can also select them by field values, with a WHERE CLAUSE. 
+The following example uses UPDATE to add to documents. Harry does not currently have a children field, and it can be added as shown. 
 
 
 <pre id="example">
 UPDATE contacts 
-USE KEYS "harry" 
-SET children = ARRAY_APPEND(children, { "name": "Julie", "age": 3 } )
-RETURNING contacts
+ SET children = [ { "name": "Tim", "age": 7 } ]
+ WHERE  email = "harry@yahoo.com"
+ RETURNING contacts
+
 
 </pre>

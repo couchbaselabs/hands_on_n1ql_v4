@@ -1,14 +1,23 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
 ## INSERT
 
+Insert lets you enter new documents into buckets.
+There are 2 methods :  
+ 
+ * Insert documents directly  
+    * Multiple documents can be inserted simultaneously.   
+ * Insert with select statement  
 
-The query on the right performs an insert-select. This allows you 
-to create new documents from complex queries. 
+
+The query on the right performs a simple single value insert operation. 
+
+Exercise : Try inserting multiple documents.
+
 
 <pre id="example">
-INSERT INTO customer_profile 
-(KEY contacts.fname || "-" || contacts.lname, VALUE contacts)
-SELECT * from contacts where age > 40
+INSERT INTO contacts (KEY, VALUE) 
+VALUES ("baldwin", {"name":"Alex Baldwin", "type":"contact"})
+RETURNING contacts
 
 </pre>

@@ -1,27 +1,14 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## MERGE
+## UPDATE - Challenge 
 
-MERGE lets you update, insert, or delete (actions) in one bucket based on a match 
-with the data in another. Multiple actions can be specified in the same query rather 
-than separate independent statements both when a match is found and otherwise.
+Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
 
-The MERGE statement contains a source bucket and a target bucket. It needs a join 
-condition based on a common attribute.
-
-For the merge examples we will use buckets cars and car_changes.
-
-The example here updates/merges documents into cars to update the mileage
-using car_changes.
+Array functions are explained here: 
+http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
 
 
 <pre id="example">
-
-MERGE INTO cars c 
-USING car_changes cc 
-ON KEY cc.car_id
-WHEN MATCHED THEN UPDATE SET c.mileage = cc.mileage
-RETURNING *
-
+/* Type your solution query here. */
 
 </pre>

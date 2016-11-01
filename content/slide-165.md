@@ -1,13 +1,11 @@
-# Part 6 : N1QL monitoring
+# Part 7 : N1QL monitoring
 
-## Exploring completed requests
+## Prepared statements continued
 
-Queries not using a covering index
+Use index type.
+
 
 <pre id="example">
-select *
-  from system:completed_requests
-  where PhaseCounts.`IndexScan` is not missing and PhaseCounts.`Fetch` is not missing
+select id from `travel-sample` where type="route" and any s in schedule satisfies s.flight="AZ917" end;
 
 </pre>
-

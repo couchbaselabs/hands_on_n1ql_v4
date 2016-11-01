@@ -1,11 +1,12 @@
-# Part 6 : N1QL monitoring
+# Part 7 : N1QL monitoring
 
-## Cancelling a requests
+## Exploring completed requests
 
-As soon as the first is running, on the other run
+Queries using a poorly selective index
 
 <pre id="example">
-delete from system:active_requests
-  where Statement like "%travel%";
-
+select *
+  from system:completed_requests
+   where PhaseCounts.`IndexScan` is not missing
+     and PhaseCounts.`Fetch`/ResultCount> 10
 </pre>

@@ -1,21 +1,13 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## INSERT - Challenge
 
-DELETE lets you remove documents from buckets.
+Use an INSERT statement to copy the contacts who don’t have children into the “customer_profile” bucket. 
 
-There are 2 methods :
-
-* Use Clause
-     * Using USE KEYS expr
-* Using USE INDEX (index-ref)
-* Use where clause to constrain which documents to delete.
-
-The example deletes 2 documents with Keys "baldwin" and "arnold"
+Use the UUID() function to create key values for the new records.
 
 
 <pre id="example">
-DELETE FROM contacts
-USE KEYS ["baldwin", "arnold"]
+/* Type your solution query here. */
 
 </pre>

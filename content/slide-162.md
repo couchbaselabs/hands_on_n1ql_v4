@@ -1,4 +1,4 @@
-# Part 6 : N1QL monitoring
+# Part 7 : N1QL monitoring
 
 ## Prepared statements continued
 

@@ -1,13 +1,18 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+## <b> Part 8 : INSERT, DELETE, UPDATE and MERGE Statements </b>
 
-## INSERT
+N1QL provides several data modification statements.  
 
-The query to the right inserts 2 documents with Key "helga" and "arnold".
+ * Insert
+ * Delete
+ * Update
+ * Upsert
+ * Merge
+
+ In the N1QL DML statements DELETE, UPDATE and MERGE the LIMIT clause 
+ serves as a hint. The query engine can stop processing records any 
+ time after the LIMIT is reached. The LIMIT is not applied exactly, 
+ which is different from SELECT statements.
 
 <pre id="example">
-INSERT INTO contacts (KEY, VALUE) 
- VALUES ("helga", {"name":"Helga Pataki", "type":"actor"}), 
-      	 ("arnold", {"name":"The Governator (Emeritus)", "type":"actor"}),
- 		 ("phoebe", {"name":"Phoebe Buffay", "type":"actor"})
 
 </pre>

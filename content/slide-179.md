@@ -1,15 +1,11 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## DELETE
+## DELETE - Using Indexes
 
-Challenge : 
-
-Use a DELETE statement to remove all contacts who have more than one hobby.
-
-The array functions are documented here:
-http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
-
+Using the index previously created we can delete the document. 
 
 <pre id="example">
+DELETE FROM contacts
+USE INDEX (deleteindex) where name="Helga Pataki"
 
 </pre>

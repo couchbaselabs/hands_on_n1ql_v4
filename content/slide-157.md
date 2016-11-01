@@ -1,4 +1,4 @@
-## Part 6 : N1QL monitoring
+## <b> Part 7 : N1QL monitoring </b>
 
 ### Preparatory work - Named Prepare Statements
 

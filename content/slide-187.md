@@ -1,21 +1,27 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
 ## MERGE
 
-Challenge : 
+MERGE lets you update, insert, or delete (actions) in one bucket based on a match 
+with the data in another. Multiple actions can be specified in the same query rather 
+than separate independent statements both when a match is found and otherwise.
 
-Modify the MERGE statement to introduce a dummy record in cars when no corresponding car record is found.
+The MERGE statement contains a source bucket and a target bucket. It needs a join 
+condition based on a common attribute.
 
-Refer to :
-http://developer.couchbase.com/documentation/server/4.5/n1ql/n1ql-language-reference/merge.html
+For the merge examples we will use buckets cars and car_changes.
 
-Add a RETURNING clause in order to see the changes made. 
+The example here updates/merges documents into cars to update the mileage
+using car_changes.
+
 
 <pre id="example">
-MERGE INTO cars c USING car_changes cc ON KEY cc.car_id
-WHEN MATCHED THEN
-	UPDATE SET c.mileage = cc.mileage
-WHEN NOT MATCHED THEN
-	INSERT {"make" : "UNKNOWN", "plate" : "UNKNOWN", "mileage": cc.mileage }
+
+MERGE INTO cars c 
+USING car_changes cc 
+ON KEY cc.car_id
+WHEN MATCHED THEN UPDATE SET c.mileage = cc.mileage
+RETURNING *
+
 
 </pre>

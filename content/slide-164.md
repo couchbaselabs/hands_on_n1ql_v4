@@ -1,13 +1,11 @@
-# Part 6 : N1QL monitoring
+# Part 7 : N1QL monitoring
 
-## Exploring completed requests
+## Prepared statements continued
 
-Queries using primary scans
+Create an index on the type attribute in `travel-sample`.
+
 
 <pre id="example">
-select *
-  from system:completed_requests
-  where PhaseCounts.`PrimaryScan` is not missing
+  create index idx_type on `travel-sample`(type);
 
 </pre>
-

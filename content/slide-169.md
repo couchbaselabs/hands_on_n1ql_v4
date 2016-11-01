@@ -1,18 +1,11 @@
-## Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 7 : N1QL monitoring
 
-N1QL provides several data modification statements.  
+## Cancelling a requests
 
- * Insert
- * Delete
- * Update
- * Upsert
- * Merge
-
- In the N1QL DML statements DELETE, UPDATE and MERGE the LIMIT clause 
- serves as a hint. The query engine can stop processing records any 
- time after the LIMIT is reached. The LIMIT is not applied exactly, 
- which is different from SELECT statements.
+You need two windows. On one run
 
 <pre id="example">
+execute s1;
 
 </pre>
+

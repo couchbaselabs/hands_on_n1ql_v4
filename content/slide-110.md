@@ -6,16 +6,13 @@ Index array elements, attributes within arrays of objects, attributes with objec
 
 
 <pre>
-SELECT * FROM `travel-sample`
-WHERE type = "route" 
-AND ANY v IN schedule SATISFIES v.flight = 'AA566' END 
-AND stops = 0;
+CREATE INDEX iflight_stops   ON `travel-sample` 
+( stops, DISTINCT ARRAY v.flight FOR v IN schedule END )
+WHERE type = "route" ;
 </pre>
 
 <pre id="example"> 
-SELECT * FROM `travel-sample`
-WHERE type = "route" 
-AND ANY v IN schedule SATISFIES v.flight = 'AA566' END 
-AND stops = 0;
+CREATE INDEX iflight_stops   ON `travel-sample` 
+( stops, DISTINCT ARRAY v.flight FOR v IN schedule END )
+WHERE type = "route" ;
 </pre>
-

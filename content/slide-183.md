@@ -1,15 +1,17 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
 ## UPDATE
 
-Challenge : 
+UPDATE replaces a document that already exists with updated values
+This can be done using a SET or UNSET clause.
 
-Create an UPDATE statement that uses the ARRAY_APPEND function to add another child to Ian.
+The UPDATE-FOR clause uses the FOR statement to iterate over a nested array and SET or UNSET the given attribute for every matching element in the array.
 
-Array functions are explained here: 
-http://developer.couchbase.com/documentation/server/current/n1ql/n1ql-language-reference/arrayfun.html
-
+Exercise : Remove the type attribte for the "ian" document.
 
 <pre id="example">
+UPDATE contacts USE KEYS "harry" 
+ SET type = "actor" 
+ RETURNING contacts
 
 </pre>

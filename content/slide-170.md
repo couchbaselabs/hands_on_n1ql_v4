@@ -1,23 +1,11 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 7 : N1QL monitoring
 
-## INSERT
+## Cancelling a requests
 
-Insert lets you enter new documents into buckets.
-There are 2 methods :  
- 
- * Insert documents directly  
-    * Multiple documents can be inserted simultaneously.   
- * Insert with select statement  
-
-
-The query on the right performs a simple single value insert operation. 
-
-Exercise : Try inserting multiple documents.
-
+As soon as the first is running, on the other run
 
 <pre id="example">
-INSERT INTO contacts (KEY, VALUE) 
-VALUES ("baldwin", {"name":"Alex Baldwin", "type":"contact"})
-RETURNING contacts
+delete from system:active_requests
+  where Statement like "%travel%";
 
 </pre>

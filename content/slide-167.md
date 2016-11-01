@@ -1,11 +1,13 @@
-# Part 6 : N1QL monitoring
+# Part 7 : N1QL monitoring
 
-## Cancelling a requests
+## Exploring completed requests
 
-You need two windows. On one run
+Queries not using a covering index
 
 <pre id="example">
-execute s1;
+select *
+  from system:completed_requests
+  where PhaseCounts.`IndexScan` is not missing and PhaseCounts.`Fetch` is not missing
 
 </pre>
 

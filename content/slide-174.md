@@ -1,16 +1,14 @@
-# Part 7 : INSERT, DELETE, UPDATE and MERGE Statements
+# Part 8 : INSERT, DELETE, UPDATE and MERGE Statements
 
-## INSERT
+## INSERT - Insert-select
 
-Challenge :
 
-Use an INSERT statement to copy the contacts who don’t have children into the “customer_profile” bucket. 
-
-Use the UUID() function to create key values for the new records.
-
+The query on the right performs an insert-select. This allows you 
+to create new documents from complex queries. 
 
 <pre id="example">
-INSERT INTO customer_profile (KEY UUID(), VALUE contacts)
-SELECT * FROM contacts WHERE children IS MISSING
+INSERT INTO customer_profile 
+(KEY contacts.fname || "-" || contacts.lname, VALUE contacts)
+SELECT * from contacts where age > 40
 
 </pre>
