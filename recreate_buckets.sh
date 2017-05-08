@@ -22,3 +22,7 @@ done
 
 # install the travel-sample
 curl ${cluster}/sampleBuckets/install -u Administrator:$pw -X POST -d '["travel-sample"]'
+
+# sleep a bit more to allow bucket creation completion.
+sleep 30
+
