@@ -7,7 +7,7 @@ Queries using primary scans
 <pre id="example">
 select *
   from system:completed_requests
-  where PhaseCounts.`PrimaryScan` is not missing
+  where phaseCounts.`primaryScan` is not missing
 
 </pre>
 
