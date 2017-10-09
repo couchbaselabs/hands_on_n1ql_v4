@@ -7,6 +7,6 @@ Queries using a poorly selective index
 <pre id="example">
 select *
   from system:completed_requests
-   where PhaseCounts.`IndexScan` is not missing
-     and PhaseCounts.`Fetch`/ResultCount> 10
+   where phaseCounts.`indexScan` is not missing
+     and phaseCounts.`fetch`/resultCount> 10
 </pre>
