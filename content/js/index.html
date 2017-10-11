@@ -5,37 +5,19 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6486176/7100172/css/fonts.css" />
     <link rel="icon" href="images/favicon.ico" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="css/tutorial.css" type="text/css" rel="stylesheet">
     <link href="css/footer.css" type="text/css" rel="stylesheet">
     <link href="css/default.css" type="text/css" rel="stylesheet">
     <link href="css/header.css" type="text/css" rel="stylesheet">
     <script src="jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/velocity.js" type="text/javascript"></script>
     <script src="js/tutorial.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/header.js" type="text/javascript"></script>
     <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
-      <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MVPNN2');</script>
-<!-- End Google Tag Manager -->
-    <title>N1QL Query Language Tutorial, Learn N1QL | Couchbase</title>
-    <meta name="description" content="Learn and try out N1QL. N1QL is a declarative query language that extends SQL for JSON. You can query data via native framework and language integration, a fluent API, or the JDBC/ODBC drivers. N1QL enables you to query JSON documents without any limitations - sort, filter, transform, group, and combine data with a single query."/>
-<meta name="keywords" content="couchbase N1QL, query language"/>
+    <title>Couchbase Query Tutorial 1</title>
   </head>
   <body> 
-   
-   <!-- Google Tag Manager -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVPNN2" height="0"
-          width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager -->
     <header>
       <div class="top-navigation">
         <div class="container">
@@ -89,7 +71,7 @@
           </div>
 
           <div class="logo">
-            <a href="https://www.couchbase.com" target="_blank">
+            <a href="/">
               <img src="images/couchbase_logo.svg" class="svg-img" alt="Couchbase"/>
             </a>
           </div>
@@ -101,7 +83,7 @@
                 <div class="sub-menu-container">
                   <div class="drop-down-title">
                     <a href="https://www.couchbase.com/products/couchbase-data-platform"><span class="link-text hyperlink-effect">Couchbase Data Platform Overview</span></a>
-                    <a href="https://www.couchbase.com/subscriptions-and-support" id="UI - Top Nav Get Pricing" class="right"><span class="transparent-btn">Get Pricing</span></a>
+                    <a href="https://www.couchbase.com/downloads" id="UI - Top Nav Download" class="right"><span class="transparent-btn">download now</span></a>
                   </div>
                   <div class="sub-menu-links">
                     <ul class="platform-link">
@@ -221,11 +203,11 @@
               </div>
             </li>
             <li class="responsive get-started list-menu">
-              <a href="https://www.couchbase.com/downloads" class="red-btn">Downloads</a>
+              <a href="https://www.couchbase.com/downloads" class="red-btn">get-started </a>
             </li>
           </ul>
           <div class="get-started">
-            <a href="https://www.couchbase.com/downloads" class="red-btn">Downloads</a>
+            <a href="https://www.couchbase.com/downloads" class="red-btn">get started</a>
           </div>
         </div>
       </nav>
@@ -237,21 +219,16 @@
           <div class="v-middle">
             <div class="container">
               <h4>N1QL</h4>
-              <h1>Query language tutorials</h1>
+              <h1>Query Language Tutorials</h1>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="query full-expand">
+    <section class="query">
       <div class="col-two-outer">
         <div id="all">
-          <div class="col-two index-block ui-widget-content">
-            <div class="hamburger-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <div class="col-two">
             <div id="info" class="query-inner-left">
               <div class="" id="slide">
                 <div id="content"></div>
@@ -269,36 +246,24 @@
               </div>
             </div>
           </div>
-          <div class="col-two query-block">
+          <div class="col-two">
             <div id="try" class="query-inner-right">
-              <div id="input" class="ui-widget-content">
-                <div class="block-views">
-                  <span class="full-view"></span>
-                  <span class="default-view"></span>
-                  <span class="bottom-view"></span>
+              <div id="input">
+                <div class="run-btn" id="run">
+                  <button>Run</button>
                 </div>
-                <div class="caption-content">
-                  <div class="title-text"><span class="title">Query</span></div>
-                  <div class="run-btn" id="run">
-                    <button>Run</button>
-                  </div>
-                </div>
-
                 <div id="query">
                   <pre id="iedit">Loading..</pre>
                 </div>
               </div>
-              <div class="result-container">
-                <span class="title">Results</span>
-                <div id="result" >
-                  <pre id="redit"></pre>
-                </div>
+              <div id="result" >
+                <pre id="redit"></pre>
               </div>
             </div>
           </div>
         </div>
         <!-- put slide count below before release. 0 = autodetect (slow) -->
-        <input id="max" type="hidden" value="189">
+        <input id="max" type="hidden" value="54">
       </div>
     </section>
     <section class="get-started">

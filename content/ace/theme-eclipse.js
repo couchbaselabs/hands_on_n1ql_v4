@@ -48,12 +48,12 @@ background-color: #FFFFFF;\
 background-color: rgb(60, 76, 114);\
 }\
 .ace-eclipse .ace_cursor {\
-color: black;\
+color: #fff;\
 }\
 .ace-eclipse .ace_storage,\
 .ace-eclipse .ace_keyword,\
 .ace-eclipse .ace_variable {\
-color: rgb(127, 0, 85);\
+color: #b36cdb;\
 }\
 .ace-eclipse .ace_constant.ace_buildin {\
 color: rgb(88, 72, 246);\
@@ -62,10 +62,10 @@ color: rgb(88, 72, 246);\
 color: rgb(6, 150, 14);\
 }\
 .ace-eclipse .ace_function {\
-color: rgb(60, 76, 114);\
+color: #00b9be;\
 }\
 .ace-eclipse .ace_string {\
-color: rgb(42, 0, 255);\
+color: #00ace0;\
 }\
 .ace-eclipse .ace_comment {\
 color: rgb(113, 150, 130);\
@@ -77,7 +77,7 @@ color: rgb(63, 95, 191);\
 color: rgb(127, 159, 191);\
 }\
 .ace-eclipse .ace_constant.ace_numeric {\
-color: darkblue;\
+color: #b36cdb;\
 }\
 .ace-eclipse .ace_tag {\
 color: rgb(25, 118, 116);\
