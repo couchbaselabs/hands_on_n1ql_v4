@@ -2,11 +2,14 @@
 
 ## ANSI JOIN
 
-ANSI JOIN requires an appropriate index on the right-hand side keyspace, either primary or secondary index.
-In order to join on arbitrary fields, we start with creating the required secondary index as shown in the query.
+ANSI JOIN requires the right-hand side to be a keyspace and an appropriate secondary index on the joining fields of it.
+
+We start with creating the required secondary index as shown in the query.
 
 
-Try the ANSI LEFT OUTER JOIN clause below to query the airport and its departing airlines.
+Try the ANSI LEFT JOIN clause below to query the airport and its departing airlines.
+
+<br>
 
 <pre>
 SELECT airport.airportname, 
@@ -19,9 +22,11 @@ WHERE  airport.type = "airport"
        AND airport.city = "San Francisco" 
        AND airport.country = "United States"; 
 </pre>
-<br><br>
+
+<br>
+
 This query can be modified to ANSI RIGHT OUTER JOIN by switching the left and right side keyspaces:
-<br><br>
+
 <pre>
 SELECT airport.airportname, 
        route.airlineid 
@@ -38,5 +43,5 @@ WHERE  airport.type = "airport"
 
 
 <pre id="example">
-CREATE INDEX route_airports ON `travel-sample`(sourceairport, destinationairport) WHERE type = "route"; 
+CREATE INDEX route_airports ON `travel-sample` (sourceairport, destinationairport) WHERE type = "route"; 
 </pre>

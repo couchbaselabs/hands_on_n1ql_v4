@@ -3,6 +3,7 @@
 ## ANSI JOIN
 
 There are two ways to handle the join scenario with left-hand array:
+
 - Utilize UNNEST to flatten the left-hand-side array into individual fields before performing the regular ANSI JOIN:
 We firstly run the query to create an index on the right-hand-side document and try the following join clause:
 
@@ -24,7 +25,7 @@ SELECT p.name, pur.purchasedAt
 LIMIT 5
 </pre>
 
-<br><br>
+<br>
 
 We should also notice the differences between UNNEST and IN-clause:
 UNEST make copies of all document thus allows for duplicate results.
@@ -34,5 +35,3 @@ IN-clase preserves the original document and no duplicate generated.
 <pre id="example">
 CREATE INDEX product_price ON product(productId, unitPrice)
 </pre>
-
-

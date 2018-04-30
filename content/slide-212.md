@@ -12,7 +12,6 @@ We firstly take a look at join on right-hand-side array:
 
 Create an index on right-hand array elements to be joined and try the query clause below:
 
-
 <pre>
 SELECT p.name, 
        pur.purchasedAt 
@@ -22,8 +21,11 @@ FROM   product p
 LIMIT 5
 </pre>
 
-<br>
 <pre id="example">
 CREATE INDEX purchase_ix ON purchases (DISTINCT ARRAY l.product FOR l IN lineItems END) 
 </pre>
+
+
+
+
 
