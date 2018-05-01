@@ -21,7 +21,7 @@ GROUP BY v.id,
 For UNNEST to use array index thus benefit from index grouping and aggregation, two conditions should be met:
 
 - The array index must be leading key.
-- The array variable in the index must match with UNNEST alia.
+- The array variable in the index must match with UNNEST alias.
 
 <pre id="example">
 CREATE INDEX idxaa1 ON cars (ALL ARRAY v.id FOR v IN a1 END, c0, c1) WHERE type = "agg";
