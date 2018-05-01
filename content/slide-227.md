@@ -2,4 +2,8 @@
 
 ## Index Partitioning
 
-Drop all the secondary indexes we created in this section with the following statements.
+Drop the secondary index we created in this section.
+
+<pre id="example">
+DROP INDEX customer.ih;
+</pre>

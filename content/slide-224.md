@@ -7,7 +7,6 @@ Let's consider an example with predicates on the hash keys, in which hash-partit
 To benefit from this partition pruning, two conditions should be met:
 
 - The predicate must be an exact match alphabetically on the partition keys. 
-
 - Equality condition and IN clause in predicates.
 
 <pre id="example">

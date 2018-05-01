@@ -7,14 +7,14 @@ Firstly create an index as shown in the query window and try the query below:
 <br>
 <pre>
 SELECT v.id AS id, 
-		d.c0 AS c0, 
-		SUM(v.id) AS sumid,
-       		AVG(d.c1) AS avgc1
+			d.c0 AS c0, 
+			SUM(v.id) AS sumid,
+      	AVG(d.c1) AS avgc1
 FROM  cars  AS d UNNEST d.a1 AS v
 WHERE v.id > 0 
-		AND d.type = "agg"
+			AND d.type = "agg"
 GROUP BY v.id, 
-		d.c0
+			d.c0
 </pre>
 <br>
 

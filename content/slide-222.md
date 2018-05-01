@@ -7,6 +7,13 @@
 Delete all the secondary indexes we created in this section with the following statements.
 
 <pre>
+DROP INDEX `travel-sample`.idx_ts_type_country_city;
 </pre>
-
 <br>
+<pre>
+DROP INDEX cars.idx1;
+</pre>
+<br>
+<pre>
+DROP INDEX cars.idxad1;
+</pre>

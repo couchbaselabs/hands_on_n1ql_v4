@@ -3,6 +3,8 @@
 ## Visual Explain
 
 Let's enable the HASH JOIN in the last example and check the visual explanation of the query plan.
+
+
 ![Visual Explain HJ](./ve2.png)
 
 

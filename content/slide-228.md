@@ -3,6 +3,7 @@
 ## Auditing Couchbase N1QL Statements
 
 Couchbase 5.5 provides the auditing functionality by logging all N1QL-related user activities, such as:
+
 - Authenticating
 - Starting and stopping query services
 - executing N1QL statements
@@ -10,20 +11,25 @@ Couchbase 5.5 provides the auditing functionality by logging all N1QL-related us
 
 N1QL auditing is at the level of request without extending to the subsidiary operations.
 
-Firstly refer to [Audit UI][url1] section to configure audit.
+Firstly refer to [<span style="color:blue"> *Audit UI* </span>][url1] section to configure audit.
+
 There are two general types of autiding:
+
 - Events corresponding to N1QL statements.
 - Events corresponding to APIs exposed by the query engine.
 
 Let's consider an example of auditing the EXPLAIN statement as shown below, make sure the "EXPLAIN statement" option in the audit configuration has been enabled.
 
-After running the query, we can check the corresponding audit record in the audit log unnder the "Target Log Directory" set up in the configuration. 
-Each record is a one line JSON text, copy one record and use SELECT clause to reformat it as shown in the query window. 
-<br>
 <pre>
-EXPLAIN SELECT DISTINCT (type) 
+EXPLAIN SELECT DISTINCT (type)
 FROM product
 </pre>
+
+<br>
+After running the query, we can check the corresponding audit record in the audit log unnder the "Target Log Directory" set up in the configuration. 
+
+Each record is a one line JSON text, copy one record and use SELECT clause to reformat it as shown in the query window. 
+<br>
 
 <pre id="example">
 SELECT 
@@ -31,4 +37,4 @@ SELECT
 </pre>
 
 
-[url1]: <https://developer.couchbase.com/documentation/server/5.5/security/n1ql-auditing.html>
+[url1]: https://developer.couchbase.com/documentation/server/5.5/security/n1ql-auditing.html

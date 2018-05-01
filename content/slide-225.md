@@ -5,7 +5,9 @@
 Let's consider an example without all partition keys in the predicates. 
 
 <br>
-In this situation, partition elimination is not applicable. However, index partitioning can still help to issue parallel scans on multiple indexer nodes simultaneously thus reduce the query latency.
+In this situation, partition elimination is not applicable. 
+
+However, index partitioning can still help to issue parallel scans on multiple indexer nodes simultaneously thus reduce the query latency.
 
 
 <pre id="example">

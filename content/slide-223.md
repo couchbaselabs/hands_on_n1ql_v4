@@ -18,7 +18,8 @@ To get more details of this hash-partitioned index, run the below query to extra
 <pre>
 SELECT * 
 FROM system:indexes 
-WHERE keyspace_id = "customer" and name = "ih";
+WHERE keyspace_id = "customer" 
+	AND name = "ih";
 </pre>
 
 
