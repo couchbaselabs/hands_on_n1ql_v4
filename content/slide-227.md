@@ -1,9 +1,9 @@
 # Part 10: N1QL QUERY OPTIMIZATION IN 5.5
+  
+## ANSI JOIN
 
-## Index Partitioning
-
-Drop the secondary index we created in this section.
+Drop all the secondary indexes we created in ANSI JOIN section.
 
 <pre id="example">
-DROP INDEX customer.ih;
+DROP INDEX purchases.purchase_ix;
 </pre>

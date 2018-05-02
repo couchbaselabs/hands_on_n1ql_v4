@@ -2,31 +2,24 @@
 
 ## ANSI JOIN
 
-Delete all the secondary indexes we created in ANSI JOIN section with the following statements.
+Try the query with chained ANSI JOIN as shown, we can also see that the ON-clause is a complex expression.
+<br>
+Keep in mind that when ANSI JOINs are chained, a RIGHT OUTER JOIN can only be the first join specified.
 
-<pre>
-DROP INDEX `travel-sample`.route_airports;
-</pre>
-<br>
-<pre>
-DROP INDEX `travel-sample`.route_sourceairport;
-</pre>
-<br>
-<pre>
-DROP INDEX `travel-sample`.airline;
-</pre>
-<br>
-<pre>
-DROP INDEX purchases.purchase_ix;
-</pre>
-<br>
-<pre>
-DROP INDEX product.product_price;
-</pre>
-<br>
-<pre>
-DROP INDEX product.product_category_unitPrice_productId;
+<pre id="exmaple">
+SELECT 	airline.name,
+        route.sourceairport,
+        airline.id,
+        route.destinationairport
+FROM   `travel-sample` airport
+       	INNER JOIN `travel-sample` route
+               	ON airport.faa = route.sourceairport
+                   AND route.type = "route"
+       	INNER JOIN `travel-sample` airline
+                ON route.airlineid = "airline_" || tostring(airline.id)
+                   AND airline.type = "airline"
+WHERE  airport.type = "airport"
+LIMIT  2;
 </pre>
 
 
- 

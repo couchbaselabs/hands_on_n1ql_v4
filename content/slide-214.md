@@ -2,28 +2,13 @@
 
 ## ANSI JOIN
 
-The ON clause of an ANSI JOIN can contain different types of multiple join conditions.
+ANSI JOIN supports chained multiple joins in one query clause.
 
-Let's see an exmaple with ANSI JOIN on arrays and non-equi conditions. 
+Let's firstly create a secondary index on the third keyspace to be joined as shown in the query.
 
-Create an index as shown and try the query below:
-<br>
-<pre>
-SELECT    p1.productId, 
-			      p1.unitPrice, 
-        		   count(DISTINCT p2.unitPrice) AS lowerpriceitem 
-FROM      product p1 
-LEFT JOIN product p2 
-ON        any cat2 IN p2.categories satisfies cat2 IN p1.categories END
-AND       p1.productId <> p2.productId 
-AND       p1.unitPrice >= p2.unitPrice 
-WHERE     any cat1 IN p1.categories satisfies lower(cat1) IN [“golf”] END
-GROUP BY  p1.productId, 
-          			p1.unitPrice 
-LIMIT     1
-</pre>
+
 
 <pre id="example">
-CREATE INDEX product_category_unitPrice_productId ON product(DISTINCT categories, unitPrice, productid);
+CREATE INDEX airline ON `travel-sample`(id) WHERE type = "airline"
 </pre>
 

@@ -1,24 +1,16 @@
 ## <b> Part 10: N1QL QUERY OPTIMIZATION IN 5.5 </b>
+  
+## Index Grouping and Aggregation
 
-## Visual Explain
+In Couchbase 5.5, N1QL optimizes the performance of GROUP BY and aggregations by pushing them down to the indexer for processing.
 
-Couchbase 5.5 supports the visualized explanation of N1QL query plans. 
-It converts the JSON-formatted result of "EXPLAIN N1QL statement" into flow chart with brief discription on top of each step and realizes a direct-viewing demonstration.
+- It can utilize the covering index to perform GROUPING, COUNT(), SUM(), MIN(), MAX(), AVG() and related operations on-the-fly.
+- Reduce the amount of data transfer and Disk I/O, achieve better performance .
 
-Let's consider an example of ANSI JOIN in the query window.
+We can get an idea of the new query plan through an example.
 
-The visual explain "Plan" is located at the right-side of "Query Results" in the "Query" page as shown in the snapshot below:
-![VisualExplain](./ve1.png)
-
-It provides the view in four directions (left -> right, right -> left, top -> down and bottom -> up).
-
-
+Firstly create an secondary index as shown.
 
 <pre id="example">
-SELECT Count(*) AS num_airline 
-FROM   `travel-sample` route 
-       INNER JOIN `travel-sample` airline 
-               ON route.airlineid = Meta(airline).id 
-WHERE  route.type = "route" 
-       AND route.destinationairport = "SFO"
+CREATE INDEX idx_ts_type ON `travel-sample` (type);
 </pre>

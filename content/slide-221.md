@@ -1,28 +1,24 @@
 # Part 10: N1QL QUERY OPTIMIZATION IN 5.5
+  
+## ANSI JOIN
 
-## Index Grouping and Aggregation
 
-Let's see an example with GROUP BY and aggregation of UNNEST operation.
-Firstly create an index as shown in the query window and try the query below:
-<br>
-<pre>
-SELECT v.id AS id, 
-			d.c0 AS c0, 
-			SUM(v.id) AS sumid,
-      	AVG(d.c1) AS avgc1
-FROM  cars  AS d UNNEST d.a1 AS v
-WHERE v.id > 0 
-			AND d.type = "agg"
-GROUP BY v.id, 
-			d.c0
-</pre>
-<br>
+Let's try the second option using In-clause on the left-hand array.
 
-For UNNEST to use array index thus benefit from index grouping and aggregation, two conditions should be met:
 
-- The array index must be leading key.
-- The array variable in the index must match with UNNEST alias.
+We should also notice the differences between UNNEST and IN-clause:
+
+- UNEST make copies of all document thus allows for duplicate results.
+- IN-clase preserves the original document and no duplicate generated.
 
 <pre id="example">
-CREATE INDEX idxaa1 ON cars (ALL ARRAY v.id FOR v IN a1 END, c0, c1) WHERE type = "agg";
+SELECT 	p.name, 
+	pur.purchasedAt
+    	FROM purchases pur JOIN product p
+      		ON p.productId IN ARRAY l.product FOR l IN pur.lineItems END
+LIMIT 5
 </pre>
+
+
+
+

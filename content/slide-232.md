@@ -1,14 +1,14 @@
-## <b> Part 10: N1QL QUERY OPTIMIZATION IN 5.5 </b>
+# Part 10: N1QL QUERY OPTIMIZATION IN 5.5
+  
+## Index Grouping and Aggregation
 
-## Prepared Statements in Cluster
+To benifit from this optimization, a good design of index to cover the query and order the index keys is essential. 
+We will go through some examples to help understanding the right patterns.
 
+Create a GSI index as shown in the query window.
 
-In Couchbase 5.5, we can expect some key improvements on the prepared statements as described below.
+<pre id="example">
+CREATE INDEX idx1 ON cars(c0, c1, c2, c3, c4) WHERE type="agg"
+</pre>
 
-N1QL service introduces two processes to handle the propagation of prepared statements in cluster:
-
--  PUSH: At prepare time, an asynchronous thread will distribute the new prepared statement to all known (and up) N1QL nodes in the cluster.
-- PULL: At execution time, if the prepared statement is not found locally, the executing node will retrieve the prepared statement from the node on which it had been prepared.
-
-Along with this automatic propogation, supplying the encoded plan via encoded_plan REST API parameter still works as usual.
 

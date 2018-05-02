@@ -1,19 +1,13 @@
 # Part 10: N1QL QUERY OPTIMIZATION IN 5.5
+  
+## ANSI JOIN
 
-## Index Grouping and Aggregation
+The ON clause of an ANSI JOIN can contain different types of multiple join conditions.
 
+Let's create an secondary index for the example we are going to see.
 
-
-Delete all the secondary indexes we created in this section with the following statements.
-
-<pre>
-DROP INDEX `travel-sample`.idx_ts_type_country_city;
+<pre id="example">
+CREATE INDEX product_category_unitPrice_productId ON product(DISTINCT categories, unitPrice, productid);
 </pre>
-<br>
-<pre>
-DROP INDEX cars.idx1;
-</pre>
-<br>
-<pre>
-DROP INDEX cars.idxad1;
-</pre>
+
+
