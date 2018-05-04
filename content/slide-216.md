@@ -18,13 +18,14 @@ We can see the "HashJoin" operator in the explain, inside which the child operat
 
 
 <pre id="example">
-EXPLAIN SELECT DISTINCT route.destinationairport
-	FROM   `travel-sample` airport
-       		JOIN `travel-sample` route USE HASH(build)
-         	ON airport.faa = route.sourceairport
-            	   AND route.type = "route"
-	WHERE   airport.type = "airport"
-       	        AND airport.city = "San Jose";
+EXPLAIN 
+SELECT	DISTINCT route.destinationairport
+FROM    `travel-sample` airport
+JOIN 	`travel-sample` route USE HASH(build)
+ON 	airport.faa = route.sourceairport
+AND 	route.type = "route"
+WHERE   airport.type = "airport"
+AND 	airport.city = "San Jose";
 </pre>
 
 

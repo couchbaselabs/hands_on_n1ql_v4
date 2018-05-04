@@ -4,7 +4,7 @@
 
 Use the new created index in the hints of previous query, we can see the IndexScan will change accordingly.
 
-<br>
+
 <pre id="example">
 EXPLAIN SELECT airport.airportname,
                route.airlineid

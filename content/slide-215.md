@@ -6,7 +6,7 @@ Try the query with chained ANSI JOIN as shown, we can also see that the ON-claus
 <br>
 Keep in mind that when ANSI JOINs are chained, a RIGHT OUTER JOIN can only be the first join specified.
 
-<pre id="exmaple">
+<pre id="example">
 SELECT 	airline.name,
         route.sourceairport,
         airline.id,
