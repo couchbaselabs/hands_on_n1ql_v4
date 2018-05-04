@@ -10,8 +10,8 @@ However, index partitioning can still help to issue parallel scans on multiple i
 
 
 <pre id="example">
-SELECT *
-FROM customer
+SELECT 	*
+FROM 	customer
 WHERE 	type = "customer"
 	AND ccInfo.cardType = "discover"
 	AND state = "CA"

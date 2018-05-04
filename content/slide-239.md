@@ -15,10 +15,10 @@ SELECT 	v.id AS id,
         d.c0 AS c0,
         SUM(v.id) AS sumid,
         AVG(d.c1) AS avgc1
-FROM  cars  AS d UNNEST d.a1 AS v
+FROM  	cars  AS d UNNEST d.a1 AS v
 WHERE 	v.id > 0
         AND d.type = "agg"
-GROUP BY v.id,
-         d.c0
+GROUP BY	v.id,
+         	d.c0
 </pre>
 

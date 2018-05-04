@@ -12,7 +12,7 @@ We should also notice the differences between UNNEST and IN-clause:
 - IN-clase preserves the original document and no duplicate generated.
 
 <pre id="example">
-SELECT 	p.name, 
+SELECT  p.name, 
 	pur.purchasedAt
 FROM 	purchases pur JOIN product p
 ON 	p.productId IN ARRAY l.product FOR l IN pur.lineItems END

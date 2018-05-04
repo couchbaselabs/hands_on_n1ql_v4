@@ -8,7 +8,8 @@ We firstly run an ANSI JOIN query using UNNEST to flatten the left-hand-side arr
 SELECT	p.name, 
 	pur.purchasedAt
 FROM 	purchases pur
-UNNEST 	pur.lineItems AS pl JOIN product p
+UNNEST 	pur.lineItems AS pl 
+JOIN 	product p
 ON 	pl.product = p.productId
 LIMIT 5
 </pre>

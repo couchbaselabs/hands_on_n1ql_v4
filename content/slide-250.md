@@ -13,6 +13,8 @@ curl -v http://localhost:8093/admin/ping
 
 Reformat the auditing record with SELECT statement as shown in the query window.
 
+
 <pre id="example">
-SELECT {"timestamp":"2018-04-29T22:59:57.940-07:00","real_userid":{"domain":"internal","user":"unknown"},"httpMethod":"GET","httpResultCode":200,"id":28697,"name":"/admin/ping API request","description":"An HTTP request was made to the API at /admin/ping."}
+SELECT
+{"timestamp":"2018-04-29T22:59:57.940-07:00","real_userid":{"domain":"internal","user":"unknown"},"httpMethod":"GET","httpResultCode":200,"id":28697,"name":"/admin/ping API request","description":"An HTTP request was made to the API at /admin/ping."}
 </pre>

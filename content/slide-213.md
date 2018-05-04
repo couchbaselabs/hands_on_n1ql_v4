@@ -6,10 +6,11 @@ Use the new created index in the hints of previous query, we can see the IndexSc
 
 
 <pre id="example">
-EXPLAIN SELECT airport.airportname,
-               route.airlineid
-FROM   `travel-sample` airport
-       LEFT JOIN `travel-sample` route USE INDEX(route_sourceairport)
+EXPLAIN 
+SELECT 	airport.airportname,
+	route.airlineid
+FROM   	`travel-sample` airport
+       	LEFT JOIN `travel-sample` route USE INDEX(route_sourceairport)
               ON airport.faa = route.sourceairport
                  AND route.type = "route"
 WHERE  airport.type = "airport"

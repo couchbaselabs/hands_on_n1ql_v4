@@ -12,21 +12,20 @@ So we can see the LET(LETTING) & FILTER(HAVING) operators coming after IndexScan
 ![LetHave](./lethave_gap.png)
 
 <pre id="example">
-SELECT d.c0 AS c0,
-        d.c1 AS c1,
-        sumc3 AS sumc3,
-        AVG(d.c4) AS avgc4,
-        COUNT(DISTINCT d.c2) AS dcountc2
-FROM cars AS d
-WHERE d.c0 > 0
-      AND d.type="agg"
-GROUP BY d.c0,
-         d.c1
-LETTING sumc3 = SUM(d.c3)
-HAVING sumc3 > 0
-ORDER BY d.c0,
-         d.c1
-OFFSET 1
-LIMIT 2;
+SELECT  	d.c0 AS c0,
+        	d.c1 AS c1,
+        	sumc3 AS sumc3,
+        	AVG(d.c4) AS avgc4,
+        	COUNT(DISTINCT d.c2) AS dcountc2
+FROM 		cars AS d
+WHERE 		d.c0 > 0
+      		AND d.type="agg"
+GROUP BY	d.c0,
+         	d.c1
+LETTING 	sumc3 = SUM(d.c3)
+HAVING 		sumc3 > 0
+ORDER BY 	d.c0,
+         	d.c1
+OFFSET 		1
+LIMIT 		2;
 </pre>
-

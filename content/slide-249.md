@@ -21,8 +21,9 @@ There are two general types of autiding:
 Let's consider an example of auditing the EXPLAIN statement as shown below, make sure the "EXPLAIN statement" option in the audit configuration has been enabled.
 
 <pre>
-EXPLAIN SELECT DISTINCT (type)
-	FROM product
+EXPLAIN 
+SELECT DISTINCT (type)
+FROM product
 </pre>
 
 <br>

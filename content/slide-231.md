@@ -11,10 +11,10 @@ There is a new "index_group_aggs" operator in the IndexScan and fewer steps comi
 
 <pre id="example">
 EXPLAIN 
-SELECT	t.type,
-	COUNT(type) AS cnt
-FROM   	`travel-sample` AS t
-WHERE  	t.type IS NOT NULL
-GROUP  BY t.type
+SELECT		t.type,
+		COUNT(type) AS cnt
+FROM   		`travel-sample` AS t
+WHERE  		t.type IS NOT NULL
+GROUP  BY 	t.type
 </pre>
 

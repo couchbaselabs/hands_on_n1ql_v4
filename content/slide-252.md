@@ -9,7 +9,7 @@ Let's enable the HASH JOIN in the last example and check the visual explanation 
 
 
 <pre id="example">
-SELECT Count(*) AS num_airline
+SELECT COUNT(*) AS num_airline
 FROM   `travel-sample` route
        INNER JOIN `travel-sample` airline USE HASH(probe)
                ON route.airlineid = Meta(airline).id

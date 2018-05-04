@@ -13,13 +13,11 @@ The visual explain "Plan" is located at the right-side of "Query Results" in the
 It provides the view in four directions (left -> right, right -> left, top -> down and bottom -> up).
 
 
-
 <pre id="example">
-SELECT Count(*) AS num_airline
-FROM   `travel-sample` route
+SELECT COUNT(*) AS num_airline
+FROM  `travel-sample` route
        INNER JOIN `travel-sample` airline
                ON route.airlineid = Meta(airline).id
-WHERE  route.type = "route"
-       AND route.destinationairport = "SFO"
-</pre>
-~               
+WHERE  route.type="route"
+       AND route.destinationairport="SFO"   
+</pre>    

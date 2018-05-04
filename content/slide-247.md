@@ -11,26 +11,25 @@ Example a:
 <pre>
 SELECT	postalCode,
        	COUNT(*) cnt
-FROM customer
-WHERE type = "customer"
-AND ccInfo.cardType is not missing
+FROM 	customer
+WHERE 	type = "customer"
+	AND ccInfo.cardType is not missing
 GROUP BY ccInfo.cardType,
-         state,
+	 state,
          postalCode
 </pre>
 <br>
 In this query, the GROUP BY is on the leading index keys with partition ones included. Thus an IndexScan can generate the results.
 
-<br>
 
 Example b:
 <br>
 <pre>
 SELECT 	postalCode, 
 	COUNT(*) cnt
-FROM customer
-WHERE type = "customer"
-AND ccInfo.cardType = "mastercard"
+FROM 	customer
+WHERE 	type = "customer"
+	AND ccInfo.cardType = "mastercard"
 GROUP BY state,
 	 postalCode
 </pre>
@@ -40,17 +39,15 @@ This query can also be satisfied with an IndexScan:
 - The GROUP BY contains all the partition.
 - The WHERE clause is an equality prediction on the leading index key.
 
-<br>
-
 
 Example c:
 <br>
 <pre>
 SELECT  postalCode,
 	COUNT(*) cnt
-FROM customer
-WHERE type = "customer"
-AND ccInfo.cardType in ["mastercard", "discover", "visa"]
+FROM 	customer
+WHERE 	type = "customer"
+	AND ccInfo.cardType in ["mastercard", "discover", "visa"]
 GROUP BY state,
          postalCode
 </pre>

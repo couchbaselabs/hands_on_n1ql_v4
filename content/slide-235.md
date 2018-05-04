@@ -16,18 +16,18 @@ We can see "index_group_aggs" is disabled, thus index grouping and aggregation d
 
 
 <pre id="example">
-SELECT 	d.c1 AS c1, 
-	d.c2 AS c2, 
-	SUM(d.c3) AS sumc3,
-       	AVG(d.c4) AS avgc4, 
-	COUNT(d.c2) AS countc2
-FROM 	cars AS d
-WHERE 	d.c0 > 0
-        AND d.type="agg"
-GROUP BY d.c1,
-         d.c2
-ORDER BY d.c1,
-         d.c2
-OFFSET 1
-LIMIT 2;
+SELECT		d.c1 AS c1,
+		d.c2 AS c2,
+		SUM(d.c3) AS sumc3,
+		AVG(d.c4) AS avgc4,
+		COUNT(d.c2) AS countc2
+FROM 		cars AS d
+WHERE		d.c0 > 0
+		AND d.type="agg"
+GROUP BY	d.c1,
+		d.c2
+ORDER BY	d.c1,
+		d.c2
+OFFSET  	1
+LIMIT		2
 </pre>
