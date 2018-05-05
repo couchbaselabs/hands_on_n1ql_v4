@@ -6,5 +6,4 @@ Drop the secondary index we created in this section.
 
 <pre id="example">
 DROP INDEX customer.ih;
-</pre>
-~        
+</pre>     
