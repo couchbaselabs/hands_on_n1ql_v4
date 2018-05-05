@@ -9,31 +9,28 @@ Create a partitioned index as shown in the query window and take a look at the f
 Example a:
 <br>
 <pre>
-SELECT	postalCode,
-       	COUNT(*) cnt
+SELECT	postalCode, COUNT(*) cnt
 FROM 	customer
 WHERE 	type = "customer"
 	AND ccInfo.cardType is not missing
-GROUP BY ccInfo.cardType,
-	 state,
-         postalCode
+GROUP BY ccInfo.cardType, state, postalCode
 </pre>
 <br>
+
 In this query, the GROUP BY is on the leading index keys with partition ones included. Thus an IndexScan can generate the results.
 
 
 Example b:
-<br>
+
 <pre>
-SELECT 	postalCode, 
-	COUNT(*) cnt
-FROM 	customer
-WHERE 	type = "customer"
-	AND ccInfo.cardType = "mastercard"
-GROUP BY state,
-	 postalCode
+SELECT  postalCode, COUNT(*) cnt
+FROM    customer
+WHERE   type="customer"
+        AND ccInfo.cardType="mastercard"
+GROUP BY state, postalCode
 </pre>
 <br>
+
 This query can also be satisfied with an IndexScan:
 
 - The GROUP BY contains all the partition.
@@ -43,13 +40,11 @@ This query can also be satisfied with an IndexScan:
 Example c:
 <br>
 <pre>
-SELECT  postalCode,
-	COUNT(*) cnt
+SELECT  postalCode, COUNT(*) cnt
 FROM 	customer
 WHERE 	type = "customer"
 	AND ccInfo.cardType in ["mastercard", "discover", "visa"]
-GROUP BY state,
-         postalCode
+GROUP BY state, postalCode
 </pre>
 <br>
 
