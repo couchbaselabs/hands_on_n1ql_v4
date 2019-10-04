@@ -9,7 +9,7 @@ build.sh - a script to create, load and index buckets for hand_on_n1ql
 #### Download and install couchbase 
 ## centos 6 or 7 ; debian 7 or 8; debian 12.04 or 14.04
 
-$./install_couchbase.sh 2845 <centos|debian|ubuntu> <6|7|12.04>
+$./install_couchbase.sh 2860 <centos|debian|ubuntu> <6|7|12.04>
 
 Note: install_couchbase.sh requires build number.
 
