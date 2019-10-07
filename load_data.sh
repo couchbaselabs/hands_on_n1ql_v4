@@ -23,7 +23,7 @@ for b in contacts customer reviews product purchases user_profile customer_profi
 do
     echo "Populating bucket $b"
     zip -r $b.zip $b 
-    ${LOADER} -u Administrator -p ${pw} -c ${host}:${clusterport} -b $b -m 100 -d ${b}.zip
+    ${LOADER} -u Administrator -p ${pw} -n ${host}:${clusterport} -b $b -s 100 ${b}.zip
     rm -rf $b
     rm -f ${b}.zip
 done
